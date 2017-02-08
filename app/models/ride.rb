@@ -11,7 +11,6 @@ class Ride < ActiveRecord::Base
     user.save
   end
 
-  private
   def ride_error?
     !!ride_error_text
   end
@@ -20,11 +19,12 @@ class Ride < ActiveRecord::Base
     @ride_error ||= ride_error
   end
 
+  private
   def ride_error
     error_text = ["Sorry."]
 
     unless has_required_tickets?
-      error_text << "You do not have enough tickets the #{attraction.name}."
+      error_text << "You do not have enough tickets to ride the #{attraction.name}."
     end
 
     unless has_required_height?

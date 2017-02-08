@@ -1,5 +1,10 @@
 <h1>Attractions</h1>
 
+<% if admin? %>
+  <div><%= link_to "New Attraction", new_attraction_path %></div>
+<% end %>
+
 <ul>
   <%= render partial: "attraction", collection: @attractions %>
 </ul>
+
