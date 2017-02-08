@@ -34,6 +34,10 @@
       </div>
     </div>
 
+    <div class="container">
+      <%= render partial: "shared/flash", collection: flash.to_a %>
+    </div>
+
     <!-- content -->
     <div class="container"  role="main">
       <%= yield %>
